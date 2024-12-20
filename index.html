@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham's Color Picker</title>
+    <style>
+        /* Styling for the body to center align and set font */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        /* Styling for the color display box */
+        .color-display {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        /* Styling for the hex code display text */
+        .hex-code {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title of the application -->
+    <h1>Saksham's Color Picker</h1>
+    <!-- Input element to pick a color -->
+    <input type="color" id="colorPicker" />
+    <!-- Div to display the chosen color -->
+    <div class="color-display" id="colorDisplay"></div>
+    <!-- Div to display the hex code of the chosen color -->
+    <div class="hex-code" id="hexCode">#000000</div>
+
+    <script>
+        // Get references to the DOM elements
+        const colorPicker = document.getElementById('colorPicker');
+        const colorDisplay = document.getElementById('colorDisplay');
+        const hexCode = document.getElementById('hexCode');
+
+        // Add an event listener to update the color display and hex code when a color is picked
+        colorPicker.addEventListener('input', () => {
+            const color = colorPicker.value; // Get the selected color's hex code
+            colorDisplay.style.backgroundColor = color; // Update the background color of the display box
+            hexCode.textContent = color; // Update the displayed hex code
+        });
+    </script>
+</body>
+</html>
